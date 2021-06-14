@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Text Effect</title>
+    <style>
+        span {
+            color: #7f2bd7;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 52% 48%;
+            row-gap: 60px;
+
+
+        }
+
+        p {
+            color: rgb(70, 69, 69);
+        }
+
+        .left {
+            padding: 70px 2px 30px 70px;
+
+        }
+
+        .right {
+
+            padding: 10px 0 30px 2px;
+        }
+
+        body {
+            font-family: Livvic, sans-serif;
+        }
+
+        button {
+            cursor: pointer;
+            margin: 30px 8px 0 8px;
+            color: #fff;
+            padding: 14px 17px;
+            font-size: 17px;
+            border: none;
+            border-radius: 7px;
+            background-color: #091B29;
+            box-shadow: 0px 16px 22px -17px #091B29;
+            transition: all .4s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 93%;
+        }
+
+        .footer {
+            grid-column-start: 1;
+            grid-column-end: -1;
+            margin: auto;
+
+
+        }
+
+        .speed-handler {
+
+            background-color: rgba(30, 94, 190, .3);
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+
+        input {
+            width: 50px;
+            padding: 5px;
+            font-size: 1.1rem;
+            background-color: #091B29;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        @media only screen and (max-width:979px) {
+            h2 {
+                font-size: 27px !important;
+                margin-bottom: -10px !important;
+            }
+
+            h1 {
+                font-size: 24px !important;
+                margin: 30px -3px 20px !important;
+            }
+
+            p {
+
+                font-size: 1.3rem !important;
+                margin: 0 -20px 0 -20px;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .right {
+                display: none;
+            }
+
+            .left {
+                text-align: center;
+                padding: 80px 0px 0px 0px !important;
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+
+            section {
+                margin: -59px 40px 0 40px;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                margin-top: 120px;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="left">
+            <h2 style="font-size: 28.8px;  margin-bottom: -10px;">Hi! My Name Is <span style="font-size: 32px;">Tasneem Sahat</span>
+
+            </h2>
+            <h1 style="font-size: 40px; margin-bottom: 16px;">
+                Professional <span style="font-size:35.3px;" id="demo"></span>
+            </h1>
+            <p style="font-size: 1.4rem; letter-spacing: 0.1px;">
+                Web Design & Development is my passion, I get deeper to understand client's need & problems. My
+                mission is to
+                satisfy every client and become myself a pro developer to learn new updates every day. You'll get
+                lifetime
+                support in any situation, I Premise that, You'll get Fanatical Support and Absolutely Positively
+                On-time
+                Delivery.
+
+            </p>
+            <button>
+                Download CV
+            </button>
+            <button style="background-color: #7f2bd7;">
+                Contact Now
+            </button>
+        </div>
+        <div class="right">
+            <img src="banner.png" alt="">
+        </div>
+        <div class="footer">
+            <div class="speed-handler">
+                <label for="inp-speed" style="font-weight: 600; color: #091b29;">
+                    SPEED
+                </label>
+                <input type="number" min="1" max="10" value="1" name="" id="inp-speed">
+            </div>
+        </div>
+    </section>
+    <script>
+        var i = 0;
+            var txt = "Web Designer";
+
+            
+        function typeWriter() {
+            if (i==txt.length) {
+                i=0;                
+            }
+            if (i < txt.length) {
+                
+                document.getElementById("demo").innerText = txt.slice(0,i+1)+'_';
+                i++;
+                
+                setTimeout(typeWriter, ((11-parseInt(document.getElementById("inp-speed").value))*27)+30);
+                
+            }
+        }
+        typeWriter()
+    </script>
+</body>
+
+</html>
