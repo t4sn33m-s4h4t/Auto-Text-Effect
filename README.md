@@ -1,2 +1,2 @@
 # Auto-Text-Effect
-yep
+Its a Auto text-effect site made with CSS 
